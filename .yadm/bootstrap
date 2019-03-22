@@ -1,0 +1,42 @@
+#!/bin/zsh
+cd $HOME
+
+echo "Init submodules"
+yadm submodule update --recursive --init
+
+if [ "$(uname -s)" = "Darwin" ]; then
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+fi
+
+if [ ! $HOME/.asdf ]; then
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
+  (cd $HOME/.asdf; git checkout "$(git describe --abbrev=0 --tags)")
+fi
+
+. $HOME/.asdf/asdf.sh
+
+$HOME/.asdf/bin/asdf plugin-add golang
+$HOME/.asdf/bin/asdf plugin-add java
+$HOME/.asdf/bin/asdf plugin-add nodejs
+$HOME/.asdf/bin/asdf plugin-add ruby
+
+$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+asdf install ruby 2.5.5
+asdf install nodejs 10.15.3
+asdf install java openjdk-11.0.1
+
+asdf global ruby 2.5.5
+asdf global nodejs 10.15.3
+asdf global java openjdk-11.0.1
+
+asdf reshim
