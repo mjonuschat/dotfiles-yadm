@@ -1,0 +1,62 @@
+# git-review
+/.gitreview
+
+# Python/Django files
+*.pot
+*.py[cod]
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Files that might appear on network drives
+.smbdelete*
+.nfs.*
+
+# Backups
+*.bak
+*~
+*.svn
+*.old
+.subl*
+
+# SASS Cache
+.sass-cache
+*.sassc
+
+# YARD artifacts
+.yardoc
+_yardoc
+
+# Ruby
+*.rbc
+.ruby-version
+
+# Patch
+**.orig
+**.rej
+
+# DirEnv
+.envrc
+
+# Sublime / ATOM PHP Code Intel
+.phpintel
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
+#
+*.iml
+#
+# ## Directory-based project format:
+.idea/
+
+# ASDF Version Manage
+.tool-versions
+
