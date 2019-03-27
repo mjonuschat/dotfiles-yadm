@@ -2,6 +2,7 @@
 brew "direnv"
 brew "postgresql"
 brew "tmux"
+brew "zplug"
 
 # Building docker baseimages
 brew "packer"

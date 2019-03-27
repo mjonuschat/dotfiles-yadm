@@ -1,8 +1,9 @@
-# Antigen ZSH plugin manager
-source /usr/local/share/antigen/antigen.zsh
-
-# Activate antigen
-antigen init $HOME/.antigenrc
+# zplug ZSH plugin manager
+if [ -d /usr/local/opt/zplug ]; then
+  export ZPLUG_HOME=/usr/local/opt/zplug
+  source $ZPLUG_HOME/init.zsh
+  [ -f $HOME/.zplugrc ] && source $HOME/.zplugrc
+fi
 
 # History substring search
 zmodload zsh/terminfo
