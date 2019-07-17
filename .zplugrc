@@ -1,4 +1,6 @@
 # Bundles from the default repo (robbyrussell's oh-my-zsh)
+zplug "robbyrussell/oh-my-zsh", as:plugin, use:"lib/*.zsh"
+
 zplug "plugins/asdf",                   from:oh-my-zsh
 zplug "plugins/bower",                  from:oh-my-zsh
 zplug "plugins/command-not-found",      from:oh-my-zsh
