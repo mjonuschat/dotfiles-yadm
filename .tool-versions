@@ -1,5 +1,5 @@
-ruby 2.5.5
-nodejs 10.15.3
+ruby 2.6.3
+nodejs 10.16.0
 java openjdk-11.0.1
 golang 1.12.6
 rust 1.35.0
