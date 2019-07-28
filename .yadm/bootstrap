@@ -18,7 +18,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
   fi
 fi
 
-if [ ! $HOME/.asdf ]; then
+if [ ! -d $HOME/.asdf ]; then
   git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
   (cd $HOME/.asdf; git checkout "$(git describe --abbrev=0 --tags)")
 fi
@@ -33,8 +33,10 @@ $HOME/.asdf/bin/asdf plugin-add rust
 
 $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-asdf install ruby $(asdf current ruby)
-asdf install nodejs $(asdf current nodejs)
-asdf install java $(asdf current java)
+if [ -f $HOME/.tool-versions ]; then
+  while IFS=' ' read -A tool; do
+    asdf install $tool[1] $tool[2]
+  done < $HOME/.tool-versions
+fi
 
 asdf reshim
