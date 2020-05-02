@@ -60,3 +60,5 @@ _yardoc
 # ASDF Version Manage
 .tool-versions
 
+# Visual Studio Code
+.vscode
