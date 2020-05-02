@@ -1,4 +1,5 @@
 ruby 2.6.6
-nodejs 12.15.0
-java amazon-corretto-11.0.6.10.1
-golang 1.13.7
+nodejs 12.16.3
+java amazon-corretto-11.0.7.10.1
+golang 1.14.2
+rust 1.43.0
