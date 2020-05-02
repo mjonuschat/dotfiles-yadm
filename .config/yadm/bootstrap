@@ -18,6 +18,11 @@ if [ "$(uname -s)" = "Darwin" ]; then
   fi
 fi
 
+if [ -f /usr/local/bin/rustup-init ]; then
+  /usr/local/bin/rustup-init -q --default-toolchain stable -c rust-src --no-modify-path
+  . $HOME/.cargo/env
+fi
+
 if [ ! -d $HOME/.asdf ]; then
   git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
   (cd $HOME/.asdf; git checkout "$(git describe --abbrev=0 --tags)")
@@ -29,7 +34,6 @@ $HOME/.asdf/bin/asdf plugin-add golang
 $HOME/.asdf/bin/asdf plugin-add java
 $HOME/.asdf/bin/asdf plugin-add nodejs
 $HOME/.asdf/bin/asdf plugin-add ruby
-$HOME/.asdf/bin/asdf plugin-add rust
 
 $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
