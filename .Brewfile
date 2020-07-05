@@ -31,7 +31,6 @@ brew "yadm"
 brew "zplug"
 
 cask "1password"
-cask "adobe-creative-cloud"
 cask "aerial"
 cask "alfred"
 cask "atom"
