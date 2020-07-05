@@ -1,7 +1,7 @@
 cask_args appdir: "/Applications"
 
 tap "homebrew/cask"
-tap "caskroom/fonts"
+tap "homebrew/cask-fonts"
 
 brew "autoconf"
 brew "automake"
@@ -47,7 +47,7 @@ cask "iterm2"
 cask "macdive"
 cask "spotify"
 
-cask "caskroom/fonts/font-source-code-pro-for-powerline"
+cask "homebrew/cask-fonts/font-source-code-pro"
 
 mas "Amphetamine", id: 937984704
 mas "Moom", id: 419330170
