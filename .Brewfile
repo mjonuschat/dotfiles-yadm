@@ -45,6 +45,7 @@ cask "google-chrome"
 cask "google-backup-and-sync"
 cask "intellij-idea"
 cask "iterm2"
+cask "jettison"
 cask "macdive"
 cask "spotify"
 
