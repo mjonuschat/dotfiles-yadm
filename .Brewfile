@@ -54,3 +54,4 @@ cask "homebrew/cask-fonts/font-source-code-pro"
 mas "Amphetamine", id: 937984704
 mas "Moom", id: 419330170
 mas "The Clock", id: 488764545
+mas "Pixelmator Pro", id: 1289583905
