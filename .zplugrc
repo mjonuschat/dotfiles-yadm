@@ -33,6 +33,9 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 
+# Fuzzy finder
+zplug "junegunn/fzf", use:"shell/*.zsh", defer:2
+
 # Customizations
 zplug "mjonuschat/zsh-customization",   from:github,    at:develop
 
