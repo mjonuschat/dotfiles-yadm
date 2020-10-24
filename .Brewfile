@@ -50,6 +50,7 @@ cask "intellij-idea"
 cask "iterm2"
 cask "jettison"
 cask "macdive"
+cask "sensiblesidebuttons"
 cask "spotify"
 
 cask "homebrew/cask-fonts/font-source-code-pro"
