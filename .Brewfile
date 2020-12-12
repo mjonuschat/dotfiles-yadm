@@ -50,6 +50,7 @@ cask "intellij-idea"
 cask "iterm2"
 cask "jettison"
 cask "macdive"
+cask "obsidian"
 cask "sensiblesidebuttons"
 cask "spotify"
 
