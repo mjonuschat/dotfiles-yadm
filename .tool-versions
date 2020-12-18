@@ -1,4 +1,4 @@
 ruby 2.7.2
-nodejs 12.19.0
-java corretto-11.0.7.10.1-1
-golang 1.14.2
+nodejs 12.20.0
+java corretto-11.0.9.12.1
+golang 1.15.6
