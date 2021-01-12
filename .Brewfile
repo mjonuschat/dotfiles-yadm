@@ -5,7 +5,6 @@ tap "homebrew/cask-fonts"
 
 brew "autoconf"
 brew "automake"
-brew "coreutils"
 brew "direnv"
 brew "docker-machine"
 brew "fd"
