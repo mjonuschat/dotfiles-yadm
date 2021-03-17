@@ -50,6 +50,7 @@ cask "iterm2"
 cask "jettison"
 cask "macdive"
 cask "obsidian"
+cask "retrobatch"
 cask "sensiblesidebuttons"
 cask "spotify"
 
