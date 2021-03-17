@@ -1,5 +1,15 @@
 #!/bin/zsh
 
+UNAME_MACHINE="$(/usr/bin/uname -m)"
+
+if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+  # Enable rosetta translation layer
+  /usr/bin/xcode-select --install-rosetta
+  HOMEBREW_PREFIX="/opt/homebrew"
+else
+  HOMEBREW_PREFIX="/usr/local"
+fi
+
 cd $HOME
 
 echo "Init submodules"
@@ -14,12 +24,12 @@ if [ "$(uname -s)" = "Darwin" ]; then
 
   if [ -f "$HOME/.Brewfile" ]; then
     echo "Updating homebrew bundle"
-    brew bundle --global
+    $HOMEBREW_PREFIX/bin/brew bundle --global
   fi
 fi
 
-if [ -f /usr/local/bin/rustup-init ]; then
-  /usr/local/bin/rustup-init -q --default-toolchain stable -c rust-src --no-modify-path
+if [ -f $HOMEBREW_PREFIX/bin/rustup-init ]; then
+  $HOMEBREW_PREFIX/bin/rustup-init -q --default-toolchain stable -c rust-src --no-modify-path
   . $HOME/.cargo/env
 fi
 

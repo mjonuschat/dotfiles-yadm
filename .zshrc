@@ -1,6 +1,17 @@
+# Homebrew
+UNAME_MACHINE="$(/usr/bin/uname -m)"
+
+if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+  HOMEBREW_PREFIX="/opt/homebrew"
+  HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}"
+else
+  HOMEBREW_PREFIX="/usr/local"
+  HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+fi
+
 # zplug ZSH plugin manager
-if [ -d /usr/local/opt/zplug ]; then
-  export ZPLUG_HOME=/usr/local/opt/zplug
+if [ -d $HOMEBREW_PREFIX/opt/zplug ]; then
+  export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
   source $ZPLUG_HOME/init.zsh
   [ -f $HOME/.zplugrc ] && source $HOME/.zplugrc
 fi
