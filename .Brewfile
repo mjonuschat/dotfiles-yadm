@@ -56,5 +56,5 @@ cask "spotify"
 cask "homebrew/cask-fonts/font-source-code-pro"
 
 mas "Amphetamine", id: 937984704
-mas "Magnet", id: 441258766
+mas "Moom", id: 419330170
 mas "Pixelmator Pro", id: 1289583905
