@@ -39,9 +39,6 @@ zplug "junegunn/fzf", use:"shell/*.zsh", defer:2
 # Customizations
 zplug "mjonuschat/zsh-customization",   from:github,    at:develop
 
-# Load theme
-zplug "themes/agnoster",                from:oh-my-zsh
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install missing zsh plugins? [y/N]: "
