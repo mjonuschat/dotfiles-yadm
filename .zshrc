@@ -2,11 +2,9 @@
 UNAME_MACHINE="$(/usr/bin/uname -m)"
 
 if [[ "$UNAME_MACHINE" == "arm64" ]]; then
-  HOMEBREW_PREFIX="/opt/homebrew"
-  HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-  HOMEBREW_PREFIX="/usr/local"
-  HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+  eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 # zplug ZSH plugin manager
