@@ -26,3 +26,5 @@ export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
 # fix GPG passphrase checking
 export GPG_TTY=$(tty)
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
