@@ -2,3 +2,4 @@
 .gem/credentials
 .docker/machine/machines/**/*.pem
 .docker/machine/certs/*.pem
+.password-store
