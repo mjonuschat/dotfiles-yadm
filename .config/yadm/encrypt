@@ -1,4 +1,4 @@
 .ssh/id_*
 .gem/credentials
-.docker/machine/**/*
-.docker/config.json
+.docker/machine/machines/**/*.pem
+.docker/machine/certs/*.pem
