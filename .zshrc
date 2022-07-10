@@ -7,6 +7,11 @@ else
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+if [ -n "$ZSH_VERSION" ]; then
+  autoload -U bashcompinit
+  bashcompinit
+fi
+
 # zplug ZSH plugin manager
 if [ -d $HOMEBREW_PREFIX/opt/zplug ]; then
   export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
