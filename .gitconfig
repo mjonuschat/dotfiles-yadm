@@ -11,6 +11,14 @@
   excludesfile = ~/.gitignore_global
   editor = vim
   quotepath = false
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[add.interactive]
+  useBuiltin = false
+[delta]
+  navigate = true
+  light = false
 [apply]
   whitespace = fix
 [advice]
@@ -34,15 +42,18 @@
   st = status                       # status
   stat = status                     # status
   g = grep --break --heading --line-number
+  dft = difftool
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an <%ae>]%Creset
 [merge]
   summary = true
   verbosity = 1
+  conflictstyle = diff3
 [diff]
   # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
+  colorMoved = default
 [push]
   default = upstream
 [include]
