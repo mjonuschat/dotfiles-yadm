@@ -38,4 +38,7 @@ export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 # fix GPG passphrase checking
 export GPG_TTY=$(tty)
 
+# Use homebrew openssl for ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
