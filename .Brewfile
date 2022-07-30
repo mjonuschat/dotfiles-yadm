@@ -49,11 +49,11 @@ cask "firefox"
 cask "google-chrome"
 cask "google-drive"
 cask "intellij-idea"
-cask "iterm2"
 cask "jettison"
 cask "macdive"
 cask "retrobatch"
 cask "spotify"
+cask "wezterm"
 
 cask "homebrew/cask-fonts/font-source-code-pro"
 
