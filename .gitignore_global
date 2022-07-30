@@ -62,3 +62,6 @@ _yardoc
 
 # Visual Studio Code
 .vscode
+
+# Virtual Env
+.venv
