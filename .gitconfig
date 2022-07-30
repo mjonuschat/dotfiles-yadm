@@ -18,6 +18,7 @@
   useBuiltin = false
 [delta]
   navigate = true
+  side-by-side = true
   light = false
 [apply]
   whitespace = fix
