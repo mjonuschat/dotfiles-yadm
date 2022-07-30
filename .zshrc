@@ -1,10 +1,15 @@
 # Homebrew
+UNAME_SYSTEM="$(/usr/bin/uname -s)"
 UNAME_MACHINE="$(/usr/bin/uname -m)"
 
-if [[ "$UNAME_MACHINE" == "arm64" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  eval "$(/usr/local/bin/brew shellenv)"
+if [[ "$UNAME_SYSTEM" == "Linux" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
+  if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
 fi
 
 if [ -n "$ZSH_VERSION" ]; then
@@ -15,6 +20,7 @@ fi
 # zplug ZSH plugin manager
 if [ -d $HOMEBREW_PREFIX/opt/zplug ]; then
   export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
+  export ZPLUG_REPOS=$HOME/.zplug/repos
   source $ZPLUG_HOME/init.zsh
   [ -f $HOME/.zplugrc ] && source $HOME/.zplugrc
 fi

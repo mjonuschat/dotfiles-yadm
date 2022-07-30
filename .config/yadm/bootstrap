@@ -1,13 +1,18 @@
 #!/bin/zsh
 
+UNAME_SYSTEM="$(/usr/bin/uname -s)"
 UNAME_MACHINE="$(/usr/bin/uname -m)"
 
-if [[ "$UNAME_MACHINE" == "arm64" ]]; then
-  # Enable rosetta translation layer
-  /usr/bin/xcode-select --install-rosetta
-  HOMEBREW_PREFIX="/opt/homebrew"
-else
-  HOMEBREW_PREFIX="/usr/local"
+if [[ "$UNAME_SYSTEM" == "Linux" ]]; then
+  HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+elif [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
+  if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+    # Enable rosetta translation layer
+    /usr/bin/xcode-select --install-rosetta
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    HOMEBREW_PREFIX="/usr/local"
+  fi
 fi
 
 cd $HOME
@@ -15,17 +20,21 @@ cd $HOME
 echo "Init submodules"
 yadm submodule update --recursive --init
 
-if [ "$(uname -s)" = "Darwin" ]; then
+if [[ "$UNAME_SYSTEM" = "Darwin" ]]; then
   # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
-
-  if [ -f "$HOME/.Brewfile" ]; then
-    echo "Updating homebrew bundle"
-    $HOMEBREW_PREFIX/bin/brew bundle --global
+elif [[ "$UNAME_SYSTEM" == "Linux" ]]; then
+  if ! command -v brew > /dev/null 2>&1; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
+fi
+
+if [ -f "$HOME/.Brewfile" ]; then
+  echo "Updating homebrew bundle"
+  $HOMEBREW_PREFIX/bin/brew bundle --global
 fi
 
 if [ -f $HOMEBREW_PREFIX/bin/rustup-init ]; then
