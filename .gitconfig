@@ -62,7 +62,7 @@
 [mergetool]
   keepBackup = true
 [pull]
-  rebase = preserve
+  rebase = merges
 [grep]
   extendRegexp = true
   lineNumber = true
