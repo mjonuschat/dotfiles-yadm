@@ -65,3 +65,7 @@ _yardoc
 
 # Virtual Env
 .venv
+
+# pyre-check
+.pyre
+.pyre_configuration*
