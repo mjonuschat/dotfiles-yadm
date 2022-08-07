@@ -1,8 +1,9 @@
 local wezterm = require 'wezterm';
 
 return {
-    font = wezterm.font_with_fallback({"Source Code Pro"}),
+    font = wezterm.font_with_fallback({"SauceCodePro Nerd Font"}),
     font_size = 14.0,
+    use_ime = true,
     default_prog = {"/bin/zsh", "-l"},
     warn_about_missing_glyphs = false,
     -- color_scheme = "Solarized Dark - Patched",
