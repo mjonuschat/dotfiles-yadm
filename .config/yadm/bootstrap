@@ -53,6 +53,7 @@ $HOME/.asdf/bin/asdf plugin-add golang
 $HOME/.asdf/bin/asdf plugin-add java
 $HOME/.asdf/bin/asdf plugin-add nodejs
 $HOME/.asdf/bin/asdf plugin-add ruby
+$HOME/.asdf/bin/asdf plugin-add python
 
 $HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
