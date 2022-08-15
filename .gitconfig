@@ -8,7 +8,7 @@
   ui = true
 [core]
   whitespace = trailing-space,space-before-tab
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore.global
   editor = vim
   quotepath = false
   pager = delta
@@ -67,4 +67,4 @@
 [init]
   defaultBranch = main
 [include]
-  path = ~/.config/git/local
+  path = ~/.gitconfig.local
