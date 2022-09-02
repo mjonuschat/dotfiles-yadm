@@ -35,7 +35,6 @@ brew "starship"
 brew "tmux"
 brew "wget"
 brew "yadm"
-brew "zplug"
 
 cask "1password"
 cask "adobe-creative-cloud"

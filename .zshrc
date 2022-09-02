@@ -12,17 +12,10 @@ elif [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
   fi
 fi
 
-if [ -n "$ZSH_VERSION" ]; then
-  autoload -U bashcompinit
-  bashcompinit
-fi
-
-# zplug ZSH plugin manager
-if [ -d $HOMEBREW_PREFIX/opt/zplug ]; then
-  export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
-  export ZPLUG_REPOS=$HOME/.zplug/repos
-  source $ZPLUG_HOME/init.zsh
-  [ -f $HOME/.zplugrc ] && source $HOME/.zplugrc
+# zgenom ZSH plugin manager
+if [[ -f "${HOME}/.zgenom/zgenom.zsh" ]]; then
+  source "${HOME}/.zgenom/zgenom.zsh"
+  [ -f $HOME/.zgenomrc ] && source $HOME/.zgenomrc
 fi
 
 # History substring search
