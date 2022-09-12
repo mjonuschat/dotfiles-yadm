@@ -14,7 +14,6 @@ if ! zgenom saved; then
     zgenom ohmyzsh plugins/docker                    
     zgenom ohmyzsh plugins/docker-compose            
     zgenom ohmyzsh plugins/fd                        
-    zgenom ohmyzsh plugins/fzf                       
     zgenom ohmyzsh plugins/gem                       
     zgenom ohmyzsh plugins/git                       
     zgenom ohmyzsh plugins/git-extras                
@@ -41,7 +40,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-history-substring-search
 
     # fuzzy finder
-    zgenom load junegunn/fzf
+    zgenom load unixorn/fzf-zsh-plugin
 
     # customizations                                                       
     zgenom load mjonuschat/zsh-customization
