@@ -29,7 +29,6 @@ if ! zgenom saved; then
     zgenom ohmyzsh plugins/rsync                     
     zgenom ohmyzsh plugins/ruby             
     zgenom ohmyzsh plugins/rust         
-    zgenom ohmyzsh plugins/tmux                      
     zgenom ohmyzsh plugins/vi-mode                   
     zgenom ohmyzsh plugins/yarn
 
